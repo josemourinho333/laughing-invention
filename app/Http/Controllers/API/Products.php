@@ -45,6 +45,13 @@ class Products extends Controller
         return $response->json();
     }
 
+    // Display all product categories
+    public function categories()
+    {
+        $response = Http::get('https://fakestoreapi.com/products/categories');
+        return $response->json();
+    }
+
     /**
      * Update the specified resource in storage.
      *
