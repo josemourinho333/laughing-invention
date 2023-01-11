@@ -16,9 +16,9 @@ class Products extends Controller
      */
     public function index()
     {
-        //
+        // get all products
         $response = Http::get('https://fakestoreapi.com/products');
-        return $response->getBody();
+        return $response->json();
     }
 
     /**
@@ -41,6 +41,8 @@ class Products extends Controller
     public function show($id)
     {
         //
+        $response = Http::get('https://fakestoreapi.com/products/'.$id);
+        return $response->json();
     }
 
     /**
