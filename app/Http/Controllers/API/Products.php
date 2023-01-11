@@ -5,7 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MyController extends Controller
+use Illuminate\Support\Facades\Http;
+
+class Products extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class MyController extends Controller
     public function index()
     {
         //
-        echo ('hello');
+        $response = Http::get('https://fakestoreapi.com/products');
+        return $response->getBody();
     }
 
     /**
