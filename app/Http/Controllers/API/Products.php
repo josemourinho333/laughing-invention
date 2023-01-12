@@ -14,10 +14,11 @@ class Products extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $limit = $request->query('limit');
         // get all products
-        $response = Http::get('https://fakestoreapi.com/products');
+        $response = Http::get('https://fakestoreapi.com/products?limit='.$limit);
         return $response->json();
     }
 
