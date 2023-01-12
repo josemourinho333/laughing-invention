@@ -41,9 +41,9 @@ class Products extends Controller
      */
     public function show($id)
     {
-        //
-        $response = Http::get('https://fakestoreapi.com/products/'.$id);
-        return $response->json();
+      //
+      $response = Http::get('https://fakestoreapi.com/products/'.$id);
+      return $response->json();
     }
 
     // Display all product categories
@@ -51,6 +51,13 @@ class Products extends Controller
     {
         $response = Http::get('https://fakestoreapi.com/products/categories');
         return $response->json();
+    }
+
+    // Display products in specific product category
+    public function categoryShow($category)
+    {
+      $response = Http::get('https://fakestoreapi.com/products/category/'.$category);
+      return $response->json();
     }
 
     /**
